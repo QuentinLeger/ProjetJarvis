@@ -45,6 +45,8 @@ def ask_nova(message: str):
     - analyse_seance
     - recherche_web
     - gestion_taches
+    
+    les mots compliqué sont : intelliJi tu entend intelligent a la place..
 
     Pour analyse_seance : si je dis "ma séance" = today, "dernière séance" = last, "cette semaine" = week
 

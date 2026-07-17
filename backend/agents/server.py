@@ -63,11 +63,12 @@ def executer_action(data):
     elif action == "repondre":
         print(data["params"].get("reponse", ""))
 
+
     elif action == "ouvrir_app":
         app_name = data["params"]["app"]
         app_path = CONFIG["apps"].get(app_name)
         if app_path:
-            subprocess.Popen(app_path)
+            subprocess.Popen(f'start "" "{app_path}"', shell=True)
         else:
             print(f"App inconnue : {app_name}")
 
