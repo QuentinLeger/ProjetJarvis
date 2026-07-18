@@ -45,6 +45,7 @@ def ask_nova(message: str):
     - analyse_seance
     - recherche_web
     - gestion_taches
+    - controle_domotique
     
     les mots compliqué sont : intelliJi tu entend intelligent a la place..
 
@@ -78,6 +79,10 @@ def ask_nova(message: str):
     "supprime la tâche X" → {{"action": "gestion_taches", "params": {{"type": "delete", "id": "..."}} }}
     
     "qu’est-ce qu’il me reste à faire ?" → {{"action": "gestion_taches", "params": {{"type": "resume"}} }}
+    
+    pour la gestion de domotique → "allume la lumière" → {{"action": "controle_domotique", "params": {{"appareil": "lumiere", "etat": "on"}}, "reponse": "Je m'en occupe, j'allume la lumière Quentin."}}
+    "éteins la prise" → {{"action": "controle_domotique", "params": {{"appareil": "prise", "etat": "off"}}, "reponse": "Bien sûr, je coupe la prise Quentin."}}
+    "liste mes appareils connected" → {{"action": "controle_domotique", "params": {{"appareil": "tous", "etat": "liste"}}, "reponse": "Je récupère la liste de vos appareils."}}
 
     Macros disponibles : coding, vibe-coding, stream
     Toujours mettre une URL complète avec https://

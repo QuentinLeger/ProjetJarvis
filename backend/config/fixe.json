@@ -1,7 +1,7 @@
 {
   "apps": {
     "steam": "C:\\Users\\atomi\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Steam",
-    "vscode": "C:\\Users\\atomi\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code\\Visual Studio Code.lnk",
+    "vscode": "C:\\Users\\atomi\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
     "chrome": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Google Chrome.lnk",
     "claude": "C:\\Program Files\\WindowsApps\\Claude_1.6259.1.0_x64__pzs8sxrjxfjjc\\app\\claude.exe",
     "deezer": "C:\\PROGRA~1\\WindowsApps\\Deezer.62021768415AF_7.1.280.0_x86__q7m17pa7q8kj0\\app\\Deezer.exe",

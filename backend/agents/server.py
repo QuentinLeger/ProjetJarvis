@@ -7,6 +7,8 @@ import edge_tts
 import pygame
 from datetime import datetime
 from dotenv import load_dotenv
+import os
+from alexa import obtenir_tous_les_appareils
 
 
 load_dotenv()
@@ -68,7 +70,11 @@ def executer_action(data):
         app_name = data["params"]["app"]
         app_path = CONFIG["apps"].get(app_name)
         if app_path:
-            subprocess.Popen(f'start "" "{app_path}"', shell=True)
+            try:
+                os.startfile(app_path)
+                print(f"Lancement réussi de : {app_name}")
+            except Exception as e:
+                print(f"Erreur lors du lancement de {app_name}: {e}")
         else:
             print(f"App inconnue : {app_name}")
 
@@ -80,6 +86,13 @@ def executer_action(data):
                 executer_action(commande)
         else:
             print(f"Macro inconnue : {nom}")
+
+
+    elif action == "controle_domotique":
+        print("[NODE] Demande de liste des appareils Alexa...")
+        liste_appareils = asyncio.run(obtenir_tous_les_appareils())
+        print(f"[NODE] Appareils reçus de l'API : {liste_appareils}")
+
 
     elif action == "recherche_web":
         params = data["params"]
