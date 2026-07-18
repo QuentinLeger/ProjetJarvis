@@ -88,10 +88,12 @@ def executer_action(data):
             print(f"Macro inconnue : {nom}")
 
 
+
     elif action == "controle_domotique":
+        cle_recue = data["params"].get("alexa_key")
         print("[NODE] Demande de liste des appareils Alexa...")
-        liste_appareils = asyncio.run(obtenir_tous_les_appareils())
-        print(f"[NODE] Appareils reçus de l'API : {liste_appareils}")
+        liste_appareils = asyncio.run(obtenir_tous_les_appareils(cle_recue))
+        print(f"[NODE] Liste finale reçue : {liste_appareils}")
 
 
     elif action == "recherche_web":

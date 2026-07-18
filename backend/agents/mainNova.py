@@ -17,6 +17,7 @@ api_key = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=api_key)
 DEVICE = "pc_fixe"
 
+
 app = FastAPI()
 import threading
 
@@ -140,6 +141,12 @@ def ask_nova(message: str):
 def send_to_device(device, payload):
     DEVICE_IPS = {"pc_fixe": "192.168.1.18:5001", "pc_portable": "10.13.33.131:5001"}
     url = f"http://{DEVICE_IPS.get(device, DEVICE)}/execute"
+
+    if payload.get("action") == "controle_domotique":
+        if "params" not in payload:
+            payload["params"] = {}
+        payload["params"]["alexa_key"] = os.getenv("ALEXA_KEY")
+
     try:
         requests.post(url, json=payload, timeout=5)
     except Exception as e:
